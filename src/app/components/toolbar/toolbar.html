@@ -1,0 +1,7 @@
+<header class="toolbar">
+  <span class="toolbar-brand">Sample Post Blog</span>
+  <div class="toolbar-right">
+    <span class="toolbar-user">{{ auth.currentUser()?.name }}</span>
+    <button class="btn-logout" (click)="logout()">Logout</button>
+  </div>
+</header>

@@ -10,6 +10,11 @@
     }
 
     <div class="field">
+      <label>Author</label>
+      <p class="author-display">{{ currentUser()?.name }}</p>
+    </div>
+
+    <div class="field">
       <label for="title">Title</label>
       <input
         id="title"
@@ -26,19 +31,15 @@
     </div>
 
     <div class="field">
-      <label for="author">Author</label>
-      <input
-        id="author"
-        type="text"
-        [ngModel]="author()"
-        (ngModelChange)="author.set($event)"
-        name="author"
-        placeholder="Enter author name"
-        [class.invalid]="submitted() && !author().trim()"
-      />
-      @if (submitted() && !author().trim()) {
-        <span class="field-error">Author is required.</span>
-      }
+      <label for="status">Status</label>
+      <select
+        id="status"
+        [ngModel]="status()"
+        (ngModelChange)="status.set($event)"
+        name="status">
+        <option value="published">Published</option>
+        <option value="draft">Draft</option>
+      </select>
     </div>
 
     <div class="field">
@@ -59,7 +60,9 @@
 
     <div class="form-actions">
       <a routerLink="/" class="btn-cancel">Cancel</a>
-      <button type="submit" class="btn-submit">Publish Post</button>
+      <button type="submit" class="btn-submit">
+        {{ status() === 'published' ? 'Publish Post' : 'Save Draft' }}
+      </button>
     </div>
   </form>
 </div>

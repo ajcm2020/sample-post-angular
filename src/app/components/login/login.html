@@ -1,0 +1,48 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <h1>Sign In</h1>
+    <p class="auth-subtitle">Sample Post Blog</p>
+
+    @if (error()) {
+      <div class="alert-error">{{ error() }}</div>
+    }
+
+    <form (ngSubmit)="onSubmit()" novalidate>
+      <div class="field">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          [ngModel]="email()"
+          (ngModelChange)="email.set($event)"
+          name="email"
+          placeholder="you@example.com"
+          autocomplete="email"
+        />
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          [ngModel]="password()"
+          (ngModelChange)="password.set($event)"
+          name="password"
+          placeholder="••••••••"
+          autocomplete="current-password"
+        />
+      </div>
+
+      <button type="submit" class="btn-submit">Sign In</button>
+    </form>
+
+    <p class="auth-footer">
+      No account? <a routerLink="/register">Register</a>
+    </p>
+
+    <p class="admin-hint">
+      Admin: <code>admin&#64;blog.com</code> — see browser console for password.
+    </p>
+  </div>
+</div>

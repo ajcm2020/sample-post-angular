@@ -1,0 +1,41 @@
+<div class="user-detail-container">
+  <a routerLink="/users" class="back-link">← Back to users</a>
+
+  @if (user(); as u) {
+    <div class="user-card">
+      <div class="user-card-header">
+        <div class="user-avatar">{{ u.name.charAt(0) }}</div>
+        <div>
+          <h1>{{ u.name }}</h1>
+          <span class="role-badge" [class.admin]="u.role === 'admin'">{{ u.role }}</span>
+        </div>
+      </div>
+      <dl class="user-fields">
+        <dt>Email</dt>
+        <dd>{{ u.email }}</dd>
+        <dt>Joined</dt>
+        <dd>{{ u.createdAt | date:'longDate' }}</dd>
+      </dl>
+    </div>
+
+    <h2 class="posts-heading">Posts by {{ u.name }}</h2>
+
+    @if (userPosts().length === 0) {
+      <p class="empty-posts">No posts yet.</p>
+    }
+
+    <div class="posts-list">
+      @for (post of userPosts(); track post.id) {
+        <article class="post-row">
+          <span class="post-title">{{ post.title }}</span>
+          <span class="status-badge" [class.published]="post.status === 'published'" [class.draft]="post.status === 'draft'">
+            {{ post.status }}
+          </span>
+          <span class="post-date">{{ post.createdAt | date:'mediumDate' }}</span>
+        </article>
+      }
+    </div>
+  } @else {
+    <p class="not-found">User not found.</p>
+  }
+</div>

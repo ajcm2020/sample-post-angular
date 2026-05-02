@@ -1,7 +1,6 @@
 .post-list-container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 2rem 1rem;
 }
 
 .list-header {
@@ -60,10 +59,38 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.post-card h2 {
+.post-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-card-header h2 {
   font-size: 1.3rem;
   color: #2d3748;
-  margin: 0 0 0.5rem;
+  margin: 0;
+}
+
+.status-badge {
+  flex-shrink: 0;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-badge.published {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-badge.draft {
+  background: #f1f5f9;
+  color: #64748b;
 }
 
 .post-meta {
@@ -72,15 +99,12 @@
   font-size: 0.85rem;
   color: #718096;
   margin-bottom: 0.75rem;
+  flex-wrap: wrap;
 }
 
-.author::before {
-  content: '✍ ';
-}
-
-.date::before {
-  content: '📅 ';
-}
+.author::before { content: '✍ '; }
+.date::before   { content: '📅 '; }
+.published-date::before { content: '🚀 '; }
 
 .post-excerpt {
   color: #4a5568;

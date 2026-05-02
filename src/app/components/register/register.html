@@ -1,0 +1,68 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <h1>Create Account</h1>
+    <p class="auth-subtitle">Sample Post Blog</p>
+
+    @if (error()) {
+      <div class="alert-error">{{ error() }}</div>
+    }
+
+    <form (ngSubmit)="onSubmit()" novalidate>
+      <div class="field">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          [ngModel]="name()"
+          (ngModelChange)="name.set($event)"
+          name="name"
+          placeholder="Your full name"
+          [class.invalid]="submitted() && !name().trim()"
+        />
+        @if (submitted() && !name().trim()) {
+          <span class="field-error">Name is required.</span>
+        }
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          [ngModel]="email()"
+          (ngModelChange)="email.set($event)"
+          name="email"
+          placeholder="you@example.com"
+          autocomplete="email"
+          [class.invalid]="submitted() && !email().trim()"
+        />
+        @if (submitted() && !email().trim()) {
+          <span class="field-error">Email is required.</span>
+        }
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          [ngModel]="password()"
+          (ngModelChange)="password.set($event)"
+          name="password"
+          placeholder="Choose a password"
+          autocomplete="new-password"
+          [class.invalid]="submitted() && !password()"
+        />
+        @if (submitted() && !password()) {
+          <span class="field-error">Password is required.</span>
+        }
+      </div>
+
+      <button type="submit" class="btn-submit">Create Account</button>
+    </form>
+
+    <p class="auth-footer">
+      Already have an account? <a routerLink="/login">Sign in</a>
+    </p>
+  </div>
+</div>

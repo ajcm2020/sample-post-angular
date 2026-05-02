@@ -1,0 +1,26 @@
+<nav class="sidebar">
+  <ul class="nav-list">
+    <li>
+      <a routerLink="/"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }"
+         class="nav-item">
+        <span class="nav-icon">📄</span> Posts
+      </a>
+    </li>
+    <li>
+      <a routerLink="/posts/new"
+         routerLinkActive="active"
+         class="nav-item">
+        <span class="nav-icon">✏️</span> New Post
+      </a>
+    </li>
+    <li>
+      <a routerLink="/users"
+         routerLinkActive="active"
+         class="nav-item">
+        <span class="nav-icon">👥</span> Users
+      </a>
+    </li>
+  </ul>
+</nav>
