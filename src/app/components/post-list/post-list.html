@@ -1,0 +1,23 @@
+<div class="post-list-container">
+  <div class="list-header">
+    <h1>Blog Posts</h1>
+    <a routerLink="/new" class="btn-new">+ New Post</a>
+  </div>
+
+  @if (posts().length === 0) {
+    <p class="empty-state">No posts yet. <a routerLink="/new">Create the first one!</a></p>
+  }
+
+  <div class="posts-grid">
+    @for (post of posts(); track post.id) {
+      <article class="post-card">
+        <h2>{{ post.title }}</h2>
+        <div class="post-meta">
+          <span class="author">{{ post.author }}</span>
+          <span class="date">{{ post.createdAt | date:'mediumDate' }}</span>
+        </div>
+        <p class="post-excerpt">{{ post.content }}</p>
+      </article>
+    }
+  </div>
+</div>
