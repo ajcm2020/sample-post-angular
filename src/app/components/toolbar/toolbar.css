@@ -28,6 +28,18 @@
   color: #9b9da8;
 }
 
+.toolbar-nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #c8cad4;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.toolbar-nav-link:hover {
+  color: #e8e9ed;
+}
+
 .btn-action {
   background: rgba(124, 106, 240, 0.18);
   border: 1px solid rgba(124, 106, 240, 0.4);

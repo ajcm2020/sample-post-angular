@@ -3,6 +3,7 @@
   <div class="toolbar-right">
     @if (auth.isAuthenticated()) {
       <span class="toolbar-user">{{ auth.currentUser()?.name }}</span>
+      <a class="toolbar-nav-link" routerLink="/dashboard">Dashboard</a>
       <button class="btn-action" (click)="logout()">Logout</button>
     } @else {
       <a class="btn-action" routerLink="/login">Login</a>
