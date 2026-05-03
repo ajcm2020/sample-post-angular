@@ -13,13 +13,13 @@ describe('PostService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should have 6 seed posts', () => {
-    expect(service.posts().length).toBe(6);
+  it('should have 110 seed posts', () => {
+    expect(service.posts().length).toBe(110);
   });
 
   it('should return posts in reverse order (newest first)', () => {
     const posts = service.posts();
-    expect(posts[0].id).toBe(6);
+    expect(posts[0].id).toBe(110);
     expect(posts[posts.length - 1].id).toBe(1);
   });
 
@@ -31,7 +31,7 @@ describe('PostService', () => {
       status: 'published',
       publishedAt: new Date(),
     });
-    expect(newPost.id).toBe(7);
+    expect(newPost.id).toBe(111);
     expect(newPost.title).toBe('Test Post');
     expect(newPost.authorId).toBe(1);
     expect(newPost.createdAt).toBeInstanceOf(Date);
@@ -39,7 +39,7 @@ describe('PostService', () => {
 
   it('should reflect the added post in the list', () => {
     service.addPost({ title: 'New', authorId: 1, content: 'Body', status: 'draft', publishedAt: null });
-    expect(service.posts().length).toBe(7);
+    expect(service.posts().length).toBe(111);
     expect(service.posts()[0].title).toBe('New');
   });
 

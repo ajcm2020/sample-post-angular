@@ -1,11 +1,11 @@
 <div class="post-list-container">
   <div class="list-header">
     <h1>Blog Posts</h1>
-    <a routerLink="/posts/new" class="btn-new">+ New Post</a>
+    <a routerLink="/dashboard/posts/new" class="btn-new">+ New Post</a>
   </div>
 
   @if (allPosts().length === 0) {
-    <p class="empty-state">No posts yet. <a routerLink="/posts/new">Create the first one!</a></p>
+    <p class="empty-state">No posts yet. <a routerLink="/dashboard/posts/new">Create the first one!</a></p>
   }
 
   <div class="posts-grid">

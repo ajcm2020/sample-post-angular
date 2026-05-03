@@ -80,7 +80,7 @@ describe('PostForm', () => {
       content: 'Great content here',
       status: 'published',
     }));
-    expect(router.navigate).toHaveBeenCalledWith(['/']);
+    expect(router.navigate).toHaveBeenCalledWith(['/dashboard']);
   });
 
   it('should set publishedAt to null when status is draft', () => {

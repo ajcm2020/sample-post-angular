@@ -55,7 +55,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           install: false
-          start: npx serve dist/sample-post-angular/browser --listen 4200 --single
+          start: npx serve dist/sample-post-angular/browser -p 4200 --single
           wait-on: 'http://localhost:4200'
           browser: chrome
           headless: true

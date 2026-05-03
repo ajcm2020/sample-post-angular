@@ -57,13 +57,13 @@ describe('Login', () => {
     expect(fixture.nativeElement.querySelector('.alert-error').textContent).toContain('Invalid');
   });
 
-  it('should navigate to / on successful login', async () => {
+  it('should navigate to /dashboard on successful login', async () => {
     await setup(true);
     const router = TestBed.inject(Router);
     spyOn(router, 'navigate');
     component.email.set('admin@blog.com');
     component.password.set('anything');
     fixture.nativeElement.querySelector('button[type="submit"]').click();
-    expect(router.navigate).toHaveBeenCalledWith(['/']);
+    expect(router.navigate).toHaveBeenCalledWith(['/dashboard']);
   });
 });

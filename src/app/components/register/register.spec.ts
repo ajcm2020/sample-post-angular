@@ -75,6 +75,6 @@ describe('Register', () => {
     fixture.nativeElement.querySelector('button[type="submit"]').click();
 
     expect(mockAuth.register).toHaveBeenCalledWith('Dave', 'dave@blog.com', 'mypass');
-    expect(router.navigate).toHaveBeenCalledWith(['/']);
+    expect(router.navigate).toHaveBeenCalledWith(['/dashboard']);
   });
 });

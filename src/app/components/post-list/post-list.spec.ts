@@ -22,7 +22,7 @@ describe('PostList', () => {
     expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('should render up to 5 posts on page 1 (6 seed posts)', () => {
+  it('should render up to 5 posts on page 1 (110 seed posts)', () => {
     const cards = fixture.nativeElement.querySelectorAll('.post-card');
     expect(cards.length).toBe(5);
   });
@@ -34,13 +34,13 @@ describe('PostList', () => {
 
   it('should show first post title (newest seed first)', () => {
     const titles = fixture.nativeElement.querySelectorAll('.post-card h2');
-    expect(titles[0].textContent).toContain('Draft: CSS Grid for App Layouts');
+    expect(titles[0].textContent).toContain('Draft: CSS Anchor Positioning');
   });
 
-  it('should have a link to /posts/new', () => {
+  it('should have a link to /dashboard/posts/new', () => {
     const link: HTMLAnchorElement = fixture.nativeElement.querySelector('a.btn-new');
     expect(link).toBeTruthy();
-    expect(link.getAttribute('href')).toBe('/posts/new');
+    expect(link.getAttribute('href')).toBe('/dashboard/posts/new');
   });
 
   it('should show status badge on each post card', () => {
@@ -58,7 +58,7 @@ describe('PostList', () => {
     fixture.componentInstance.onPageChange(2);
     fixture.detectChanges();
     const cards = fixture.nativeElement.querySelectorAll('.post-card');
-    expect(cards.length).toBe(1);
+    expect(cards.length).toBe(5);
   });
 
   it('should show empty state when no posts', async () => {
