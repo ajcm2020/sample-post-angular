@@ -1,0 +1,49 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  background: #222327;
+  color: #e8e9ed;
+  height: 100%;
+  border-bottom: 1px solid #35363c;
+}
+
+.toolbar-brand {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: #e8e9ed;
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toolbar-user {
+  font-size: 0.9rem;
+  color: #9b9da8;
+}
+
+.btn-action {
+  background: rgba(124, 106, 240, 0.18);
+  border: 1px solid rgba(124, 106, 240, 0.4);
+  color: #e8e9ed;
+  padding: 0.3rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-action:hover {
+  background: rgba(124, 106, 240, 0.32);
+  border-color: rgba(124, 106, 240, 0.7);
+}

@@ -1,0 +1,30 @@
+<div class="user-list-container">
+  <h1>Users</h1>
+
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Joined</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (user of userService.users(); track user.id) {
+        <tr>
+          <td>{{ user.name }}</td>
+          <td class="email">{{ user.email }}</td>
+          <td>
+            <span class="role-badge" [class.admin]="user.role === 'admin'">{{ user.role }}</span>
+          </td>
+          <td>{{ user.createdAt | date:'mediumDate' }}</td>
+          <td>
+            <a [routerLink]="['/users', user.id]" class="btn-detail">View</a>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

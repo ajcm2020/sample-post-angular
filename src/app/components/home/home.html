@@ -1,0 +1,23 @@
+<div class="home-container">
+  <h1 class="page-title">Latest Posts</h1>
+
+  @if (publishedPosts().length === 0) {
+    <p class="empty-state">No published posts yet.</p>
+  }
+
+  <div class="cards-grid">
+    @for (post of publishedPosts(); track post.id) {
+      <article class="post-card" [routerLink]="['/posts', post.id]">
+        <div class="card-thumbnail">
+          @if (post.imageUrl) {
+            <img [src]="post.imageUrl" [alt]="post.title" loading="lazy" />
+          }
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">{{ post.title }}</h2>
+          <span class="card-date">{{ post.publishedAt ?? post.createdAt | date:'mediumDate' }}</span>
+        </div>
+      </article>
+    }
+  </div>
+</div>
