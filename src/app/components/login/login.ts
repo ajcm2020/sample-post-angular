@@ -26,7 +26,7 @@ export class Login {
     }
     const ok = this.authService.login(this.email().trim(), this.password());
     if (ok) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/dashboard']);
     } else {
       this.error.set('Invalid email or password.');
     }

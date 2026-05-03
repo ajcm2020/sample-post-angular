@@ -22,7 +22,7 @@ app-sidebar  { grid-area: sidebar; overflow-y: auto; }
   grid-area: content;
   overflow-y: auto;
   padding: 1.5rem 2rem;
-  background: #f7f8fc;
+  background: #18191c;
 }
 
 app-footer { grid-area: footer; }

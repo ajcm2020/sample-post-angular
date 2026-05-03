@@ -1,0 +1,64 @@
+@if (post(); as p) {
+  <article class="detail-container">
+
+    <a class="back-link" routerLink="/">← Back to posts</a>
+
+    <div class="hero">
+      @if (p.imageUrl) {
+        <img class="hero-img" [src]="p.imageUrl" [alt]="p.title" />
+      }
+    </div>
+
+    <div class="detail-body">
+      <h1 class="detail-title">{{ p.title }}</h1>
+
+      <div class="detail-meta">
+        @if (author()) {
+          <span class="meta-author">By {{ author()!.name }}</span>
+        }
+        <span class="meta-date">
+          {{ p.publishedAt ?? p.createdAt | date:'longDate' }}
+        </span>
+      </div>
+
+      <div class="detail-content">
+        <p>{{ p.content }}</p>
+
+        <p>
+          Modern software development moves fast, and staying current requires both breadth and depth.
+          This post walks through the key ideas step by step, giving you a mental model you can apply
+          immediately on your next project. Each section builds on the last, so read straight through
+          or jump to the part most relevant to your work.
+        </p>
+
+        <p>
+          One of the most common mistakes developers make is skipping foundational concepts in favour
+          of jumping straight to the implementation. Taking a few minutes to understand the why behind
+          a tool or pattern pays dividends every time you have to debug, extend, or explain it to a
+          colleague. The examples below are deliberately minimal — stripped down to show the idea
+          without noise — but each one reflects a real pattern pulled from production codebases.
+        </p>
+
+        <p>
+          Performance, maintainability, and developer experience are not mutually exclusive. When you
+          apply the right abstractions at the right level of the stack, you often get all three for
+          free. The techniques covered here have been validated across teams of different sizes, from
+          solo projects to large engineering organisations, and they hold up under pressure.
+        </p>
+
+        <p>
+          As always, treat the advice here as a starting point, not a rulebook. Every codebase has
+          its own constraints, history, and team dynamics. The goal is to give you enough context to
+          make informed trade-offs, not to hand you a one-size-fits-all solution. Experiment, measure,
+          and iterate — that is how the best software gets built.
+        </p>
+      </div>
+    </div>
+
+  </article>
+} @else {
+  <div class="not-found">
+    <p>Post not found.</p>
+    <a routerLink="/">← Back to posts</a>
+  </div>
+}

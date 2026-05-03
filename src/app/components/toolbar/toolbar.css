@@ -3,16 +3,18 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 1.5rem;
-  background: #4f46e5;
-  color: #fff;
+  background: #222327;
+  color: #e8e9ed;
   height: 100%;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid #35363c;
 }
 
 .toolbar-brand {
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 0.02em;
+  text-decoration: none;
+  color: #e8e9ed;
 }
 
 .toolbar-right {
@@ -23,20 +25,25 @@
 
 .toolbar-user {
   font-size: 0.9rem;
-  opacity: 0.9;
+  color: #9b9da8;
 }
 
-.btn-logout {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: #fff;
-  padding: 0.3rem 0.85rem;
+.btn-action {
+  background: rgba(124, 106, 240, 0.18);
+  border: 1px solid rgba(124, 106, 240, 0.4);
+  color: #e8e9ed;
+  padding: 0.3rem 0.9rem;
   border-radius: 6px;
   font-size: 0.85rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.2s, border-color 0.2s;
 }
 
-.btn-logout:hover {
-  background: rgba(255, 255, 255, 0.25);
+.btn-action:hover {
+  background: rgba(124, 106, 240, 0.32);
+  border-color: rgba(124, 106, 240, 0.7);
 }

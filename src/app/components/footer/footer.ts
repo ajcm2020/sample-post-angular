@@ -9,10 +9,10 @@ import { Component } from '@angular/core';
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #f1f5f9;
-      border-top: 1px solid #e2e8f0;
+      background: #1c1d20;
+      border-top: 1px solid #35363c;
       font-size: 0.8rem;
-      color: #94a3b8;
+      color: #5e6070;
       height: 100%;
     }
   `],

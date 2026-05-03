@@ -33,6 +33,6 @@ export class Register {
     }
     this.error.set('');
     this.authService.register(this.name().trim(), this.email().trim(), this.password());
-    this.router.navigate(['/']);
+    this.router.navigate(['/dashboard']);
   }
 }

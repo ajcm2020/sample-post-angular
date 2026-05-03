@@ -1,7 +1,8 @@
 .sidebar {
-  background: #1e1b4b;
+  background: #1c1d20;
   height: 100%;
   padding: 1.5rem 0;
+  border-right: 1px solid #35363c;
 }
 
 .nav-list {
@@ -15,7 +16,7 @@
   align-items: center;
   gap: 0.6rem;
   padding: 0.75rem 1.5rem;
-  color: #c7d2fe;
+  color: #9b9da8;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
@@ -23,14 +24,14 @@
 }
 
 .nav-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  color: #e8e9ed;
 }
 
 .nav-item.active {
-  background: rgba(99, 102, 241, 0.35);
-  color: #fff;
-  border-right: 3px solid #818cf8;
+  background: rgba(124, 106, 240, 0.18);
+  color: #e8e9ed;
+  border-right: 3px solid #7c6af0;
 }
 
 .nav-icon {

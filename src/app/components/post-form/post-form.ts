@@ -39,6 +39,6 @@ export class PostForm {
       status: this.status(),
       publishedAt: this.status() === 'published' ? new Date() : null,
     });
-    this.router.navigate(['/']);
+    this.router.navigate(['/dashboard']);
   }
 }

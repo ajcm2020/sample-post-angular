@@ -1,7 +1,11 @@
 <header class="toolbar">
-  <span class="toolbar-brand">Sample Post Blog</span>
+  <a class="toolbar-brand" routerLink="/">My Sample Blog</a>
   <div class="toolbar-right">
-    <span class="toolbar-user">{{ auth.currentUser()?.name }}</span>
-    <button class="btn-logout" (click)="logout()">Logout</button>
+    @if (auth.isAuthenticated()) {
+      <span class="toolbar-user">{{ auth.currentUser()?.name }}</span>
+      <button class="btn-action" (click)="logout()">Logout</button>
+    } @else {
+      <a class="btn-action" routerLink="/login">Login</a>
+    }
   </div>
 </header>
